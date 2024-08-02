@@ -32,6 +32,7 @@ module.exports = {
     },
   },
   rules: {
+    'vue/multi-word-component-names': 'off',
     'import/no-extraneous-dependencies': 'off',
     // 对后缀的检测
     'import/extensions': [
