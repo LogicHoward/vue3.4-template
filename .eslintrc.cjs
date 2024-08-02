@@ -32,6 +32,8 @@ module.exports = {
     },
   },
   rules: {
+    'no-unused-vars': 'off',
+    'import/prefer-default-export': 'off',
     'vue/multi-word-component-names': 'off',
     'import/no-extraneous-dependencies': 'off',
     // 对后缀的检测

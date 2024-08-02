@@ -4,12 +4,13 @@ import { fileURLToPath, URL } from 'node:url'
 import { visualizer } from 'rollup-plugin-visualizer'
 import { defineConfig } from 'vite'
 import eslintPlugin from 'vite-plugin-eslint2'
+import svgLoader from 'vite-svg-loader'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   base: './',
   plugins: [
     vue(),
+    svgLoader(),
     vueJsx(),
     eslintPlugin({
       cache: false, // 禁用eslint缓存
