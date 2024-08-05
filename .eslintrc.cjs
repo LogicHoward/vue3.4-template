@@ -32,6 +32,7 @@ module.exports = {
     },
   },
   rules: {
+    'no-console': 'off',
     'no-unused-vars': 'off',
     'import/prefer-default-export': 'off',
     'vue/multi-word-component-names': 'off',

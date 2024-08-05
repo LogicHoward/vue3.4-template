@@ -22,10 +22,10 @@
       <el-form-item prop="password ">
         <span class="svg-container">
           <!-- <svg-icon icon="https://res.lgdsunday.club/user.svg"></svg-icon> -->
-          <el-icon>
-            <Avatar />
-          </el-icon>
+
+          <img style="width: 14px; height: 14px" :src="SVG_ICONS.password" alt="" />
         </span>
+
         <el-input
           placeholder="password"
           name="password"
@@ -34,9 +34,7 @@
         ></el-input>
         <span class="show-pwd">
           <span class="svg-container" @click="onChangePwdType">
-            <el-icon>
-              <Avatar />
-            </el-icon>
+            <img style="width: 14px; height: 14px" :src="SVG_ICONS.eye" alt="" />
           </span>
         </span>
       </el-form-item>
@@ -56,7 +54,10 @@ import { Avatar } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 import { useStore } from 'vuex'
 
+import SVG_ICONS from '@/icons/svg/SVG_ICONS'
+
 import { validatePassword } from './rules'
+
 // 数据源
 const loginForm = ref({
   username: 'super-admin',
@@ -95,7 +96,7 @@ const loading = ref(false)
 const store = useStore()
 const loginFormRef = ref(null)
 const handlerLogin = () => {
-  // console.log(loginFormRef.value)
+  console.log(loginFormRef.value)
   loginFormRef.value.validate((valid) => {
     if (!valid) return
     loading.value = true
@@ -105,7 +106,7 @@ const handlerLogin = () => {
         loading.value = false
       })
       .catch((err) => {
-        // console.log(err)
+        console.log(err)
 
         loading.value = false
       })

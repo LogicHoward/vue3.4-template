@@ -63,5 +63,14 @@ export default defineConfig({
     host: '0.0.0.0',
     open: false,
     port: 5183,
+    proxy: {
+      // 添加代理配置
+      '/api': {
+        // 匹配请求路径为/api的请求
+        target: 'http://localhost:5183', // 代理目标地址，您的后端服务地址
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''), // 重写路径，去掉/api前缀
+      },
+    },
   },
 })
